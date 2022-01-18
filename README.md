@@ -1,6 +1,6 @@
 # News
 
-[1/17/2022] ADG-Pose paper is submitted. The code will be released soon.
+[1/18/2022] This repository is still getting updated.
 
 # ADG-Pose
 ADG-Pose is a method of Automated Dataset Generation for real-world human pose estimation. ADG-Pose enables users to determine the *person scale*, *crowdedness*, and *occlusion density* distributions of the generated datasets, allowing for training environments that better match the distributions of the target application.
@@ -11,18 +11,20 @@ The following figure shows the three main stages of ADG-Pose. First, a high accu
 
 # Environment Setup
 
-We have used Ubuntu 18.04.5, Python 3.6.9, and NVIDIA GPUs for developing the ADG-Pose.
+We have used Ubuntu 18.04.5, Python 3.6.9, and NVIDIA GPUs for developing the ADG-Pose. The rest of the requirments is listed in Requirements.txt.
 
 # Usage
 
 When making a new output dataset, set up the folder structure beforehand:
 ```
-- new_dataset
+- generated_dataset
 |  - images
 |  |  - train
 |  |  - val
 |  - annotations
 ```
+
+A sample folder with this structrue is provided under the name generated_dataset.
 
 1. Open the "Decode.py" File and edit the line 260. Look for the comment and change accordingly. The path to the initial dataset must be determined here.
 2. Prepare the json file of bounding boxes.
@@ -37,3 +39,7 @@ python Decode.py --json path_to_bbox/bbox.json --cfg path_to_top_down_model/conf
 ```
 python Crop.py
 ```
+
+# Citation
+
+Will be announced.

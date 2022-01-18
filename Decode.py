@@ -168,8 +168,8 @@ def convert_bbox(bbox, imgw, imgh):
 def parse_args():
     parser = argparse.ArgumentParser(description='Train keypoints network')
     # general
-    parser.add_argument('--cfg', type=str, default='deep-high-resolution-net.pytorch/demo/inference-config.yaml')
-    parser.add_argument('--json', type=str, default='/mnt/AI_RAID/PANDA/image_annos/person_bbox_train.json')
+    parser.add_argument('--cfg', type=str)
+    parser.add_argument('--json', type=str)
     parser.add_argument('--write',action='store_true')
     parser.add_argument('--showFps',action='store_true')
 
@@ -196,13 +196,6 @@ def main():
     args = parse_args()
     update_config(cfg,args)
 
-#    pose_model = eval('models.'+cfg.MODEL.NAME+'.get_pose_net')(cfg, is_train=False)
-#    pose_model.load_state_dict(torch.load(cfg.TEST.MODEL_FILE), strict=False)
-#    pose_model = torch.nn.DataParallel(pose_model, device_ids=cfg.GPUS)
-#    pose_model.to(CTX)
-#    pose_model.eval()
-
-    # TODO: check path exist
     path = args.json
     f = open(path)
 
@@ -264,7 +257,7 @@ def worker_process(cfg, input, images, annos):
     pbar = tqdm(total = len(input), position=process_id, desc=f'Worker {process_id}', smoothing=0)
     for idx, (filename, d) in input:
 #        print(f'{idx}: {filename}')
-        image_bgr = cv2.imread('/mnt/AI_RAID/PANDA/image_train/' + filename)
+        image_bgr = cv2.imread('path_to_images_of_primary_dataset' + filename) #Type the address to images folder of the primary dataset
         image = image_bgr[:, :, [2,1,0]]
 
         imgw = d['image size']['width']
