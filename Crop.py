@@ -33,6 +33,7 @@ CROP_MAX_WIDTH = 1080
 CROP_MIN_WIDTH = 512
 CROP_ASPECT = 0.75
 MAX_PEOPLE = 30
+
 RETRY_EMPTY_CHANCE = 0.00001
 
 output_dataset = 'change path to outputed dataset' #change path to wherever the outputed dataset should be
