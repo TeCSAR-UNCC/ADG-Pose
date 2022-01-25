@@ -33,7 +33,7 @@ CROP_MAX_WIDTH = 1080
 CROP_MIN_WIDTH = 512
 CROP_ASPECT = 0.75
 MAX_PEOPLE = 30
-
+OCCUPIED_RANDOM_CROP_VAL = 20
 RETRY_EMPTY_CHANCE = 0.00001
 
 output_dataset = 'change path to outputed dataset' #change path to wherever the outputed dataset should be
@@ -177,7 +177,7 @@ def random_crop(lock, image_data, anno_data, img_count, anno_count, anno_stats, 
         crop = get_crop(imgw, imgh)
         annos, d = get_annos(crop, anno_data)
 
-        if i % 20 != 0:
+        if i % OCCUPIED_CROP_VAL != 0:
             x = 0
             while len(annos) > MAX_PEOPLE or len(annos) == 0:
                 crop = get_occupied_crop(imgw, imgh, anno_data)
