@@ -1,4 +1,4 @@
-# News
+# News  
 
 [1/18/2022] This repository is still getting updated.
 
@@ -83,4 +83,5 @@ In the Crop.py file, lines 32 to 35 must be edited according to user needs.
 
 # Citation
 
-Will be announced.
+This repository represents the code from the following paper:
+https://arxiv.org/abs/2202.00753
