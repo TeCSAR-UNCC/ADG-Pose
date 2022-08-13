@@ -83,5 +83,15 @@ In the Crop.py file, lines 32 to 35 must be edited according to user needs.
 
 # Citation
 
-This repository represents the code from the following paper:
-https://arxiv.org/abs/2202.00753
+If you find this work useful, please cite the following:
+
+```
+@inproceedings{alinezhad2022adg,
+  title={ADG-Pose: Automated Dataset Generation for Real-World Human Pose Estimation},
+  author={Alinezhad Noghre, Ghazal and Danesh Pazho, Armin and Sanchez, Justin and Hewitt, Nathan and Neff, Christopher and Tabkhi, Hamed},
+  booktitle={International Conference on Pattern Recognition and Artificial Intelligence},
+  pages={258--270},
+  year={2022},
+  organization={Springer}
+}
+```
